@@ -1,6 +1,8 @@
 # negatr
 
-R package for...
+- This is an R package (suitable for CRAN) to detect and correct for biases--especially residual confounding, selection bias, and measurement error--with negative control exposures and outcomes, primarily for epidemiological studies.
+- The aim is to create a one-stop resource for all methods related to negative controls.
+- The package should follow best coding practices. For instance: reusing code, proper documentation, proper unit testing, continuous integration.
 
 ## Project structure
 

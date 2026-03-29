@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(grep -E '\\\\.\\(Rmd|md|LICENSE|NAMESPACE\\)$')"
+      "Bash(grep -E '\\\\.\\(Rmd|md|LICENSE|NAMESPACE\\)$')",
+      "Bash(Rscript -e \"devtools::document\\(\\)\")",
+      "Bash(Rscript -e \"devtools::test\\(\\)\")"
     ]
   }
 }

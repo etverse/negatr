@@ -1,0 +1,2 @@
+- should it support multiply imputed datasets from `mice` (https://github.com/amices/mice)?
+- should we separate methods based on the type of bias (unmeasured confounding, selection bias, or measurement bias)? They might require different strategies (like in https://doi.org/10.1097%2FeDe.0000000000000504).

@@ -16,41 +16,54 @@ knitr::opts_chunk$set(
 # negatr
 
 <!-- badges: start -->
+
 [![R-CMD-check](https://github.com/etverse/negatr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/etverse/negatr/actions/workflows/R-CMD-check.yaml)
 [![Codecov test coverage](https://codecov.io/gh/etverse/negatr/graph/badge.svg)](https://app.codecov.io/gh/etverse/negatr)
+
 <!-- badges: end -->
 
-The goal of negatr is to ...
+**negatr** implements negative control methods for detecting and correcting several biases in epidemiological studies,
+including unmeasured confounding, selection bias, and measurement error.
+
+The package provides a comprehensive framework for:
+
+- **Assumption Validation**: Check exclusion restrictions,
+  U-comparability, positivity, and completeness.
+- **DAG Integration**: Specify and validate causal structures with
+  dagitty.
+- **Bias Detection**: Test for biases using negative
+  control exposures (NCE) and/or negative control outcomes (NCO).
+- **Bias Correction**: Apply standard and modern methods for
+  bias correction.
+- **Flexible Modeling**: Support for GLM, GAM, survival models, and
+  custom fitting functions.
 
 ## Installation
 
-You can install the development version of negatr like so:
+You can install the development version of `negatr` like so:
 
-``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+```r
+# Install from GitHub
+# install.packages("remotes")
+remotes::install_github("etverse/negatr")
 ```
 
-## Example
+## Quick Start
 
-This is a basic example which shows you how to solve a common problem:
+## Core Workflow
 
-```{r example}
-library(negatr)
-## basic example code
-```
+## Key Features
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+### DAG-Based Validation
 
-```{r cars}
-summary(cars)
-```
+### Negative Control Types
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
+### Bias Correction Methods
 
-You can also embed plots, for example:
+### Flexible Modeling
 
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
+## References
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+## Getting Help
+
+## License
