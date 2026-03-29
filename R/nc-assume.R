@@ -47,19 +47,24 @@
 #' nd <- nc_data(df, spec)
 #' nc_assume(nd)
 nc_assume <- function(
-    ncdata,
-    checks = c("exclusion", "u_comparability"),
-    model = nc_model(stats::lm),
-    ...) {
+  ncdata,
+  checks = c("exclusion", "u_comparability"),
+  model = nc_model(stats::lm),
+  ...
+) {
   if (!inherits(ncdata, "nc_data")) {
     rlang::abort("`ncdata` must be an `nc_data` object created by `nc_data()`.")
   }
   if (!inherits(model, "nc_model")) {
-    rlang::abort("`model` must be an `nc_model` object created by `nc_model()`.")
+    rlang::abort(
+      "`model` must be an `nc_model` object created by `nc_model()`."
+    )
   }
 
   supported <- c("exclusion", "u_comparability")
-  for (ch in checks) check_choice(ch, supported)
+  for (ch in checks) {
+    check_choice(ch, supported)
+  }
 
   spec <- attr(ncdata, "spec")
   results <- list()
@@ -79,7 +84,13 @@ print.nc_assume_result <- function(x, ...) {
   cat("Negative control assumption checks\n")
   for (nm in names(x)) {
     item <- x[[nm]]
-    status <- if (isTRUE(item$passed)) "[PASS]" else if (isFALSE(item$passed)) "[FAIL]" else "[WARN]"
+    status <- if (isTRUE(item$passed)) {
+      "[PASS]"
+    } else if (isFALSE(item$passed)) {
+      "[FAIL]"
+    } else {
+      "[WARN]"
+    }
     cat(" ", status, nm, ":", item$message, "\n")
   }
   invisible(x)

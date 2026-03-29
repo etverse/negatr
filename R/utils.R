@@ -1,4 +1,8 @@
-check_string <- function(x, arg = rlang::caller_arg(x), call = rlang::caller_env()) {
+check_string <- function(
+  x,
+  arg = rlang::caller_arg(x),
+  call = rlang::caller_env()
+) {
   if (!rlang::is_string(x)) {
     rlang::abort(
       paste0("`", arg, "` must be a single string, not ", class(x)[[1L]], "."),
@@ -8,7 +12,11 @@ check_string <- function(x, arg = rlang::caller_arg(x), call = rlang::caller_env
   invisible(x)
 }
 
-check_formula <- function(x, arg = rlang::caller_arg(x), call = rlang::caller_env()) {
+check_formula <- function(
+  x,
+  arg = rlang::caller_arg(x),
+  call = rlang::caller_env()
+) {
   if (!inherits(x, "formula")) {
     rlang::abort(
       paste0("`", arg, "` must be a formula, not ", class(x)[[1L]], "."),
@@ -18,7 +26,11 @@ check_formula <- function(x, arg = rlang::caller_arg(x), call = rlang::caller_en
   invisible(x)
 }
 
-check_data_frame <- function(x, arg = rlang::caller_arg(x), call = rlang::caller_env()) {
+check_data_frame <- function(
+  x,
+  arg = rlang::caller_arg(x),
+  call = rlang::caller_env()
+) {
   if (!is.data.frame(x)) {
     rlang::abort(
       paste0("`", arg, "` must be a data frame, not ", class(x)[[1L]], "."),
@@ -28,7 +40,12 @@ check_data_frame <- function(x, arg = rlang::caller_arg(x), call = rlang::caller
   invisible(x)
 }
 
-check_column_exists <- function(data, col, arg = rlang::caller_arg(col), call = rlang::caller_env()) {
+check_column_exists <- function(
+  data,
+  col,
+  arg = rlang::caller_arg(col),
+  call = rlang::caller_env()
+) {
   if (!col %in% names(data)) {
     rlang::abort(
       paste0("Column `", col, "` not found in data."),
@@ -38,13 +55,22 @@ check_column_exists <- function(data, col, arg = rlang::caller_arg(col), call = 
   invisible(col)
 }
 
-check_choice <- function(x, choices, arg = rlang::caller_arg(x), call = rlang::caller_env()) {
+check_choice <- function(
+  x,
+  choices,
+  arg = rlang::caller_arg(x),
+  call = rlang::caller_env()
+) {
   if (!x %in% choices) {
     rlang::abort(
       paste0(
-        "`", arg, "` must be one of ",
+        "`",
+        arg,
+        "` must be one of ",
         paste0('"', choices, '"', collapse = ", "),
-        ", not \"", x, "\"."
+        ", not \"",
+        x,
+        "\"."
       ),
       call = call
     )
@@ -52,15 +78,31 @@ check_choice <- function(x, choices, arg = rlang::caller_arg(x), call = rlang::c
   invisible(x)
 }
 
-check_null_or_string <- function(x, arg = rlang::caller_arg(x), call = rlang::caller_env()) {
-  if (!is.null(x)) check_string(x, arg = arg, call = call)
+check_null_or_string <- function(
+  x,
+  arg = rlang::caller_arg(x),
+  call = rlang::caller_env()
+) {
+  if (!is.null(x)) {
+    check_string(x, arg = arg, call = call)
+  }
   invisible(x)
 }
 
-check_null_or_character <- function(x, arg = rlang::caller_arg(x), call = rlang::caller_env()) {
+check_null_or_character <- function(
+  x,
+  arg = rlang::caller_arg(x),
+  call = rlang::caller_env()
+) {
   if (!is.null(x) && !is.character(x)) {
     rlang::abort(
-      paste0("`", arg, "` must be a character vector or NULL, not ", class(x)[[1L]], "."),
+      paste0(
+        "`",
+        arg,
+        "` must be a character vector or NULL, not ",
+        class(x)[[1L]],
+        "."
+      ),
       call = call
     )
   }

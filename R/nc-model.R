@@ -58,11 +58,23 @@ fit_model <- function(spec, data, response, predictors, model) {
   do.call(model$fitter, args)
 }
 
-build_predictors <- function(spec, include = c("exposure", "nce", "nco", "covariates"), exclude = NULL) {
+build_predictors <- function(
+  spec,
+  include = c("exposure", "nce", "nco", "covariates"),
+  exclude = NULL
+) {
   vars <- character(0L)
-  if ("exposure" %in% include && !is.null(spec$exposure)) vars <- c(vars, spec$exposure)
-  if ("nce" %in% include && !is.null(spec$nce)) vars <- c(vars, spec$nce)
-  if ("nco" %in% include && !is.null(spec$nco)) vars <- c(vars, spec$nco)
-  if ("covariates" %in% include && !is.null(spec$covariates)) vars <- c(vars, spec$covariates)
+  if ("exposure" %in% include && !is.null(spec$exposure)) {
+    vars <- c(vars, spec$exposure)
+  }
+  if ("nce" %in% include && !is.null(spec$nce)) {
+    vars <- c(vars, spec$nce)
+  }
+  if ("nco" %in% include && !is.null(spec$nco)) {
+    vars <- c(vars, spec$nco)
+  }
+  if ("covariates" %in% include && !is.null(spec$covariates)) {
+    vars <- c(vars, spec$covariates)
+  }
   setdiff(vars, exclude)
 }

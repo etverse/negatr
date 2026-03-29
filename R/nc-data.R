@@ -29,11 +29,12 @@
 #'   covariates = c("age", "sex")
 #' )
 nc_spec <- function(
-    exposure,
-    outcome,
-    nce = NULL,
-    nco = NULL,
-    covariates = NULL) {
+  exposure,
+  outcome,
+  nce = NULL,
+  nco = NULL,
+  covariates = NULL
+) {
   check_string(exposure)
   check_string(outcome)
   check_null_or_string(nce)
@@ -81,7 +82,13 @@ nc_data <- function(data, spec) {
     rlang::abort("`spec` must be an `nc_spec` object created by `nc_spec()`.")
   }
 
-  required_cols <- c(spec$exposure, spec$outcome, spec$nce, spec$nco, spec$covariates)
+  required_cols <- c(
+    spec$exposure,
+    spec$outcome,
+    spec$nce,
+    spec$nco,
+    spec$covariates
+  )
   for (col in required_cols) {
     check_column_exists(data, col)
   }
@@ -98,8 +105,12 @@ print.nc_spec <- function(x, ...) {
   cat("Negative control specification\n")
   cat("  Exposure  :", x$exposure, "\n")
   cat("  Outcome   :", x$outcome, "\n")
-  if (!is.null(x$nce)) cat("  NC Exposure :", x$nce, "\n")
-  if (!is.null(x$nco)) cat("  NC Outcome  :", x$nco, "\n")
+  if (!is.null(x$nce)) {
+    cat("  NC Exposure :", x$nce, "\n")
+  }
+  if (!is.null(x$nco)) {
+    cat("  NC Outcome  :", x$nco, "\n")
+  }
   if (!is.null(x$covariates)) {
     cat("  Covariates :", paste(x$covariates, collapse = ", "), "\n")
   }

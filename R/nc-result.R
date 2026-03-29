@@ -25,14 +25,15 @@
 #'
 #' @export
 nc_detect_result <- function(
-    estimate,
-    se = NULL,
-    ci = NULL,
-    p_value = NULL,
-    method,
-    nc_type,
-    model_fit,
-    call = NULL) {
+  estimate,
+  se = NULL,
+  ci = NULL,
+  p_value = NULL,
+  method,
+  nc_type,
+  model_fit,
+  call = NULL
+) {
   check_string(method)
   check_choice(nc_type, c("nce", "nco"))
 
@@ -57,15 +58,21 @@ print.nc_detect_result <- function(x, ...) {
   cat("  Method  :", x$method, "\n")
   cat("  NC type :", x$nc_type, "\n")
   cat("  Estimate:", format(round(x$estimate, 4L)), "\n")
-  if (!is.null(x$se)) cat("  SE      :", format(round(x$se, 4L)), "\n")
+  if (!is.null(x$se)) {
+    cat("  SE      :", format(round(x$se, 4L)), "\n")
+  }
   if (!is.null(x$ci)) {
     cat(
       "  95% CI  : [",
-      format(round(x$ci[["lower"]], 4L)), ",",
-      format(round(x$ci[["upper"]], 4L)), "]\n"
+      format(round(x$ci[["lower"]], 4L)),
+      ",",
+      format(round(x$ci[["upper"]], 4L)),
+      "]\n"
     )
   }
-  if (!is.null(x$p_value)) cat("  P-value :", format(round(x$p_value, 4L)), "\n")
+  if (!is.null(x$p_value)) {
+    cat("  P-value :", format(round(x$p_value, 4L)), "\n")
+  }
   invisible(x)
 }
 
@@ -94,13 +101,14 @@ print.nc_detect_result <- function(x, ...) {
 #'
 #' @export
 nc_correct_result <- function(
-    estimate,
-    se = NULL,
-    ci = NULL,
-    method,
-    nc_type,
-    model_fits = list(),
-    call = NULL) {
+  estimate,
+  se = NULL,
+  ci = NULL,
+  method,
+  nc_type,
+  model_fits = list(),
+  call = NULL
+) {
   check_string(method)
   check_choice(nc_type, c("nce", "nco", "both"))
 
@@ -124,12 +132,16 @@ print.nc_correct_result <- function(x, ...) {
   cat("  Method  :", x$method, "\n")
   cat("  NC type :", x$nc_type, "\n")
   cat("  Corrected estimate:", format(round(x$estimate, 4L)), "\n")
-  if (!is.null(x$se)) cat("  SE      :", format(round(x$se, 4L)), "\n")
+  if (!is.null(x$se)) {
+    cat("  SE      :", format(round(x$se, 4L)), "\n")
+  }
   if (!is.null(x$ci)) {
     cat(
       "  95% CI  : [",
-      format(round(x$ci[["lower"]], 4L)), ",",
-      format(round(x$ci[["upper"]], 4L)), "]\n"
+      format(round(x$ci[["lower"]], 4L)),
+      ",",
+      format(round(x$ci[["upper"]], 4L)),
+      "]\n"
     )
   }
   invisible(x)

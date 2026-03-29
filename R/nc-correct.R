@@ -35,12 +35,19 @@
 #' spec <- nc_spec(exposure = "A", outcome = "Y", nco = "W", covariates = "age")
 #' nd <- nc_data(df, spec)
 #' nc_correct(nd, method = "diff_in_diff")
-nc_correct <- function(ncdata, method = "diff_in_diff", model = nc_model(stats::lm), ...) {
+nc_correct <- function(
+  ncdata,
+  method = "diff_in_diff",
+  model = nc_model(stats::lm),
+  ...
+) {
   if (!inherits(ncdata, "nc_data")) {
     rlang::abort("`ncdata` must be an `nc_data` object created by `nc_data()`.")
   }
   if (!inherits(model, "nc_model")) {
-    rlang::abort("`model` must be an `nc_model` object created by `nc_model()`.")
+    rlang::abort(
+      "`model` must be an `nc_model` object created by `nc_model()`."
+    )
   }
 
   supported <- c("diff_in_diff")
@@ -48,8 +55,15 @@ nc_correct <- function(ncdata, method = "diff_in_diff", model = nc_model(stats::
 
   spec <- attr(ncdata, "spec")
 
-  switch(method,
-    diff_in_diff = nc_correct_diff_in_diff(ncdata, spec, model, rlang::current_call(), ...)
+  switch(
+    method,
+    diff_in_diff = nc_correct_diff_in_diff(
+      ncdata,
+      spec,
+      model,
+      rlang::current_call(),
+      ...
+    )
   )
 }
 
@@ -61,10 +75,22 @@ nc_correct_diff_in_diff <- function(ncdata, spec, model, call, ...) {
     )
   }
 
-  primary_predictors <- build_predictors(spec, include = c("exposure", "covariates"))
-  fit_primary <- fit_model(spec, ncdata, spec$outcome, primary_predictors, model)
+  primary_predictors <- build_predictors(
+    spec,
+    include = c("exposure", "covariates")
+  )
+  fit_primary <- fit_model(
+    spec,
+    ncdata,
+    spec$outcome,
+    primary_predictors,
+    model
+  )
 
-  nco_predictors <- build_predictors(spec, include = c("exposure", "covariates"))
+  nco_predictors <- build_predictors(
+    spec,
+    include = c("exposure", "covariates")
+  )
   fit_nco <- fit_model(spec, ncdata, spec$nco, nco_predictors, model)
 
   primary_coefs <- stats::coef(fit_primary)
@@ -72,7 +98,11 @@ nc_correct_diff_in_diff <- function(ncdata, spec, model, call, ...) {
 
   if (!spec$exposure %in% names(primary_coefs)) {
     rlang::abort(
-      paste0("Coefficient for `", spec$exposure, "` not found in primary model."),
+      paste0(
+        "Coefficient for `",
+        spec$exposure,
+        "` not found in primary model."
+      ),
       call = call
     )
   }

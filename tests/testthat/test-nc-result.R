@@ -28,10 +28,12 @@ test_that("nc_detect_result() errors on bad nc_type", {
 
 test_that("print.nc_detect_result() produces output", {
   r <- nc_detect_result(
-    estimate = 0.1, se = 0.05,
+    estimate = 0.1,
+    se = 0.05,
     ci = c(lower = 0.0, upper = 0.2),
     p_value = 0.04,
-    method = "null_test", nc_type = "nco",
+    method = "null_test",
+    nc_type = "nco",
     model_fit = NULL
   )
   expect_output(print(r), "Negative control bias detection")
@@ -66,9 +68,11 @@ test_that("nc_correct_result() errors on bad nc_type", {
 
 test_that("print.nc_correct_result() produces output", {
   r <- nc_correct_result(
-    estimate = 0.3, se = 0.1,
+    estimate = 0.3,
+    se = 0.1,
     ci = c(lower = 0.1, upper = 0.5),
-    method = "diff_in_diff", nc_type = "nco"
+    method = "diff_in_diff",
+    nc_type = "nco"
   )
   expect_output(print(r), "Negative control bias correction")
   expect_output(print(r), "diff_in_diff")

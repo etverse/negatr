@@ -22,7 +22,12 @@ test_that("nc_spec() with both nc works", {
 })
 
 test_that("nc_spec() with covariates works", {
-  spec <- nc_spec(exposure = "A", outcome = "Y", nco = "W", covariates = c("age", "sex"))
+  spec <- nc_spec(
+    exposure = "A",
+    outcome = "Y",
+    nco = "W",
+    covariates = c("age", "sex")
+  )
   expect_equal(spec$covariates, c("age", "sex"))
 })
 
@@ -40,7 +45,13 @@ test_that("nc_spec() errors on bad input types", {
 })
 
 test_that("print.nc_spec() produces output", {
-  spec <- nc_spec(exposure = "A", outcome = "Y", nce = "Z", nco = "W", covariates = "age")
+  spec <- nc_spec(
+    exposure = "A",
+    outcome = "Y",
+    nce = "Z",
+    nco = "W",
+    covariates = "age"
+  )
   expect_output(print(spec), "Negative control specification")
   expect_output(print(spec), "NC Exposure")
   expect_output(print(spec), "NC Outcome")

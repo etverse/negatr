@@ -7,8 +7,10 @@ make_nc_data <- function(seed = 1L, n = 200L) {
     age = rnorm(n)
   )
   spec <- nc_spec(
-    exposure = "A", outcome = "Y",
-    nco = "W", covariates = "age"
+    exposure = "A",
+    outcome = "Y",
+    nco = "W",
+    covariates = "age"
   )
   nc_data(df, spec)
 }

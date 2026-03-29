@@ -27,8 +27,10 @@ test_that("print.nc_model() produces output", {
 
 test_that("build_predictors() returns correct variables", {
   spec <- nc_spec(
-    exposure = "A", outcome = "Y",
-    nce = "Z", nco = "W",
+    exposure = "A",
+    outcome = "Y",
+    nce = "Z",
+    nco = "W",
     covariates = c("age", "sex")
   )
   expect_equal(
@@ -40,7 +42,11 @@ test_that("build_predictors() returns correct variables", {
     c("Z", "W")
   )
   expect_equal(
-    build_predictors(spec, include = c("exposure", "covariates"), exclude = "A"),
+    build_predictors(
+      spec,
+      include = c("exposure", "covariates"),
+      exclude = "A"
+    ),
     c("age", "sex")
   )
 })

@@ -25,6 +25,8 @@ jobs:
           extra-packages: any::altdoc
           needs: website
 
+      - uses: quarto-dev/quarto-actions/setup@v2
+
       - name: Render docs
         run: altdoc::render_docs(freeze = FALSE)
         shell: Rscript {0}

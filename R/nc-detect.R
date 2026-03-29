@@ -34,12 +34,19 @@
 #' spec <- nc_spec(exposure = "A", outcome = "Y", nco = "W", covariates = "age")
 #' nd <- nc_data(df, spec)
 #' nc_detect(nd, method = "null_test")
-nc_detect <- function(ncdata, method = "null_test", model = nc_model(stats::lm), ...) {
+nc_detect <- function(
+  ncdata,
+  method = "null_test",
+  model = nc_model(stats::lm),
+  ...
+) {
   if (!inherits(ncdata, "nc_data")) {
     rlang::abort("`ncdata` must be an `nc_data` object created by `nc_data()`.")
   }
   if (!inherits(model, "nc_model")) {
-    rlang::abort("`model` must be an `nc_model` object created by `nc_model()`.")
+    rlang::abort(
+      "`model` must be an `nc_model` object created by `nc_model()`."
+    )
   }
 
   supported <- c("null_test")
@@ -47,14 +54,24 @@ nc_detect <- function(ncdata, method = "null_test", model = nc_model(stats::lm),
 
   spec <- attr(ncdata, "spec")
 
-  switch(method,
-    null_test = nc_detect_null_test(ncdata, spec, model, rlang::current_call(), ...)
+  switch(
+    method,
+    null_test = nc_detect_null_test(
+      ncdata,
+      spec,
+      model,
+      rlang::current_call(),
+      ...
+    )
   )
 }
 
 nc_detect_null_test <- function(ncdata, spec, model, call, ...) {
   if (is.null(spec$nco) && is.null(spec$nce)) {
-    rlang::abort("At least one negative control variable must be specified.", call = call)
+    rlang::abort(
+      "At least one negative control variable must be specified.",
+      call = call
+    )
   }
 
   if (!is.null(spec$nco)) {
