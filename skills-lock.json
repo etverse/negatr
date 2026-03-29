@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "skills": {
+    "brand-yml": {
+      "source": "posit-dev/skills",
+      "sourceType": "github",
+      "computedHash": "4fae38bcb2fc85c173104afc604053b45e50dbc1d1592ddd230e96e257d40d68"
+    },
+    "cli": {
+      "source": "posit-dev/skills",
+      "sourceType": "github",
+      "computedHash": "c3636e77c4297f721b6dcb50dc954ad82e8eb1eb9f33730887f8da0b5da5da0d"
+    },
+    "cran-extrachecks": {
+      "source": "posit-dev/skills",
+      "sourceType": "github",
+      "computedHash": "dcada0cec7ac5d0a10031af91dabffc8357f3dc93bb6ae7fa843e2127375c876"
+    },
+    "create-release-checklist": {
+      "source": "posit-dev/skills",
+      "sourceType": "github",
+      "computedHash": "d41db993d963fde61dcca0d3cc006a31e03d0c042d40133c91d255cc73aa496f"
+    },
+    "critical-code-reviewer": {
+      "source": "posit-dev/skills",
+      "sourceType": "github",
+      "computedHash": "a13c7fb232ae8fa030a68a7843096298fa499f2aa1e56ee855c14a3c41079495"
+    },
+    "describe-design": {
+      "source": "posit-dev/skills",
+      "sourceType": "github",
+      "computedHash": "9fe3042e6873fc5d280ef283aaaf28a34dd09f4f36456b94e6ffd513fa06bfcc"
+    },
+    "lifecycle": {
+      "source": "posit-dev/skills",
+      "sourceType": "github",
+      "computedHash": "b22c072030e1db9d632eaf4eb145c74135c06229822d69c1678fa13990dfcdb5"
+    },
+    "mirai": {
+      "source": "posit-dev/skills",
+      "sourceType": "github",
+      "computedHash": "7aeab41f319f20aec8b42b4edc08a32fea22ab5cb38c9a69e8d4ac2fdf32e603"
+    },
+    "pr-create": {
+      "source": "posit-dev/skills",
+      "sourceType": "github",
+      "computedHash": "08f753185e67f8c38c6d554db0e1d6f21a3eb77a90f3b735d849a8185ee0cff6"
+    },
+    "pr-threads-address": {
+      "source": "posit-dev/skills",
+      "sourceType": "github",
+      "computedHash": "405b88b0e232b374dcf93b9fd7c41609f4bacf1c62bd475f235502af6921302e"
+    },
+    "pr-threads-resolve": {
+      "source": "posit-dev/skills",
+      "sourceType": "github",
+      "computedHash": "be2eb0a6ed2439f706273a53a8f864b6a6ce0590fdabe23fa9884f0869154aca"
+    },
+    "quarto-alt-text": {
+      "source": "posit-dev/skills",
+      "sourceType": "github",
+      "computedHash": "da5b94874a1d913bafb3a86695b126c8e5d0215e367eae414a4ec96ccf69f096"
+    },
+    "quarto-authoring": {
+      "source": "posit-dev/skills",
+      "sourceType": "github",
+      "computedHash": "b5e4682209c69c1ee15734c09a996c372d0c4593013fa01346c24e319e3cfabe"
+    },
+    "r-cli-app": {
+      "source": "posit-dev/skills",
+      "sourceType": "github",
+      "computedHash": "00dc15ddc1d4ffa5d5d895511b5d6ec19a998e26916928da947c335d1bbe993c"
+    },
+    "r-package-development": {
+      "source": "posit-dev/skills",
+      "sourceType": "github",
+      "computedHash": "08d76aad705bc5e673f9bd4e80702ee49baee6208bb2eefc7f258adafa024f95"
+    },
+    "release-post": {
+      "source": "posit-dev/skills",
+      "sourceType": "github",
+      "computedHash": "9903c50f81054929f5638032682647a815990f6e04aea80b86ff931d4202880c"
+    },
+    "shiny-bslib": {
+      "source": "posit-dev/skills",
+      "sourceType": "github",
+      "computedHash": "6f154650069e7c8e1befdb1ee3edb55c7a8e71d82ea19f5eb76d415c6428cbed"
+    },
+    "shiny-bslib-theming": {
+      "source": "posit-dev/skills",
+      "sourceType": "github",
+      "computedHash": "80999357f85e455ef68ea9f31a6acfa1d5ddc537956bbee2186f5b1cac9d922c"
+    },
+    "testing-r-packages": {
+      "source": "posit-dev/skills",
+      "sourceType": "github",
+      "computedHash": "cf7749e36141e5a02b28031c9bbc56810de3b7e1e8a0b40313f33d841db7e2d3"
+    }
+  }
+}
