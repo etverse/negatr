@@ -3,7 +3,10 @@
     "allow": [
       "Bash(grep -E '\\\\.\\(Rmd|md|LICENSE|NAMESPACE\\)$')",
       "Bash(Rscript -e \"devtools::document\\(\\)\")",
-      "Bash(Rscript -e \"devtools::test\\(\\)\")"
+      "Bash(Rscript -e \"devtools::test\\(\\)\")",
+      "Bash(gh run:*)",
+      "Bash(air format:*)",
+      "Bash(Rscript -e \"altdoc::render_docs\\(freeze = FALSE\\)\")"
     ]
   }
 }

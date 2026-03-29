@@ -27,6 +27,10 @@ jobs:
 
       - uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Install package
+        run: R CMD INSTALL --no-multiarch --with-keep.source .
+        shell: bash
+
       - name: Render docs
         run: altdoc::render_docs(freeze = FALSE)
         shell: Rscript {0}
