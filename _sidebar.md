@@ -1,0 +1,13 @@
+* [Home](/)
+* Reference: 
+  - [nc_assume](man/nc_assume)
+  - [nc_correct_result](man/nc_correct_result)
+  - [nc_correct](man/nc_correct)
+  - [nc_data](man/nc_data)
+  - [nc_detect_result](man/nc_detect_result)
+  - [nc_detect](man/nc_detect)
+  - [nc_model](man/nc_model)
+  - [nc_spec](man/nc_spec)
+* [News](NEWS.md)
+* [License](LICENSE.md)
+* [Citation](CITATION.md)
