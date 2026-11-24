@@ -25,4 +25,4 @@ site-preview:
 	Rscript -e "altdoc::preview_docs()"
 
 clean:
-	rm -rf docs/ man/ mypkg.Rcheck
+	rm -rf docs/ man/ negatr.Rcheck
