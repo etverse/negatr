@@ -116,5 +116,5 @@ nc_assume(nd)
 ```
 
     Negative control assumption checks
-      [PASS] exclusion : NCE not significantly associated with outcome (p = 0.950). 
-      [FAIL] u_comparability : NCE is not associated with primary exposure (p = 0.089); U-comparability may not hold. 
+      [PASS] exclusion : NCE not significantly associated with outcome (p = 0.998). 
+      [FAIL] u_comparability : NCE is not associated with primary exposure (p = 0.051); U-comparability may not hold. 
