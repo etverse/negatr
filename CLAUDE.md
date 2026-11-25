@@ -8,6 +8,6 @@ The code now in `R/` predates the design and will be replaced by a rebuild that 
 
 The `Makefile` has `make document`, `make test`, `make check`, `make format` (Air), `make lint` and `make site` (altdoc).
 
-## Planning files
+## Planned work
 
-`METHODS.md` lists candidate methods and `DOUBTS.md` the open design questions.
+Candidate methods, open design questions and known bugs are GitHub issues (`gh issue list`, `gh issue view <n>`), grouped in `ROADMAP.md`.
