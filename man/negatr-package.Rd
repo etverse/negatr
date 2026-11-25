@@ -19,5 +19,10 @@ Useful links:
 \author{
 \strong{Maintainer}: Lorenzo Fabbri \email{lorenzo.fabbri92sm@gmail.com} (\href{https://orcid.org/0000-0003-3031-322X}{ORCID})
 
+Authors:
+\itemize{
+  \item Lorenzo Fabbri \email{lorenzo.fabbri92sm@gmail.com} (\href{https://orcid.org/0000-0003-3031-322X}{ORCID})
+}
+
 }
 \keyword{internal}

@@ -10,5 +10,4 @@
 ^\.worktreeinclude$
 ^CLAUDE\.md$
 ^Makefile$
-^DOUBTS\.md$
-^METHODS\.md$
+^ROADMAP\.md$
