@@ -95,4 +95,4 @@ nc_correct(nd, method = "diff_in_diff")
     Negative control bias correction
       Method  : diff_in_diff 
       NC type : nco 
-      Corrected estimate: 0.1096 
+      Corrected estimate: 0.4348 

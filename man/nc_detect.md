@@ -95,7 +95,7 @@ nc_detect(nd, method = "null_test")
     Negative control bias detection
       Method  : null_test 
       NC type : nco 
-      Estimate: 0.0158 
-      SE      : 0.0717 
-      95% CI  : [ -0.1256 , 0.1572 ]
-      P-value : 0.8258 
+      Estimate: 0.0141 
+      SE      : 0.0741 
+      95% CI  : [ -0.132 , 0.1603 ]
+      P-value : 0.8493 
